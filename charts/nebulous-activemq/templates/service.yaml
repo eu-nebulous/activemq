@@ -7,9 +7,13 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: {{ .Values.service.guiPort }}
+      targetPort: gui
       protocol: TCP
-      name: http
+      name: gui
+    - port: {{ .Values.service.activemqPort }}
+      targetPort: activemq
+      protocol: TCP
+      name: activemq
   selector:
     {{- include "nebulous-activemq.selectorLabels" . | nindent 4 }}

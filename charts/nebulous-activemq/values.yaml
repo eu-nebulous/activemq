@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: "quay.io/nebulous/activemq-java-spring-boot-demo"
+  repository: "quay.io/nebulous/activemq-broker"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -38,7 +38,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  guiPort: 8161 
+  activemqPort: 61616
 
 ingress:
   enabled: false
@@ -80,3 +81,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+brokerEnv:
+- name: ACTIVEMQ_NAME
+  value: activemq
+- name: ACTIVEMQ_PASSWORD
+  value: nebulous
+- name: ACTIVEMQ_USERNAME
+  value: admin

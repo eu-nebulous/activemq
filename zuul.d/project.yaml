@@ -5,6 +5,8 @@
         - nebulous-activemq-helm-lint
         - nebulous-activemq-build-container-images
         - nebulous-activemq-hadolint
+        # TODO: temporary, remove
+        - nebulous-activemq-apply-helm-charts
         - nebulous-platform-apply-helm-charts
         - nox-linters
     gate:
