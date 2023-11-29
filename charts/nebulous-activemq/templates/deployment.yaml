@@ -45,9 +45,17 @@ spec:
           livenessProbe:
             tcpSocket:
               port: activemq
+            periodSeconds: 10
           readinessProbe:
             tcpSocket:
               port: activemq
+            periodSeconds: 10
+          startupProbe:
+            tcpSocket:
+              port: activemq
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 6
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
