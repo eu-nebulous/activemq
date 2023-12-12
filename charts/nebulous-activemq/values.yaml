@@ -40,6 +40,7 @@ service:
   type: ClusterIP
   guiPort: 8161 
   activemqPort: 61616
+  amqpPort: 5672
 
 ingress:
   enabled: false

@@ -15,5 +15,9 @@ spec:
       targetPort: activemq
       protocol: TCP
       name: activemq
+    - port: {{ .Values.service.amqpPort }}
+      targetPort: amqp
+      protocol: TCP
+      name: amqp
   selector:
     {{- include "nebulous-activemq.selectorLabels" . | nindent 4 }}
