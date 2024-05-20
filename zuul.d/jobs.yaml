@@ -35,6 +35,7 @@
     name: nebulous-activemq-promote-container-images
     parent: nebulous-promote-container-images
     description: Promote previously uploaded container images.
+    files: *image_files
     vars: *image_vars
 
 - job:
