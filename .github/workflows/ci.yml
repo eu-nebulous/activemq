@@ -4,10 +4,12 @@ on:
     branches:
       - main
       - r[1-9]
+      - componentsinappcluster
   pull_request:
     branches:
       - main
       - r[1-9]
+      - componentsinappcluster
 jobs:
   build-and-push-activemq-broker-control-plane:
     name: Build and push activemq-broker control-plane
