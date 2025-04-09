@@ -135,8 +135,9 @@ under the License.
 	   <property key="ems_port" value="${IOT_EMS_PORT}"/>	   
 	   <property key="ems_user" value="${IOT_EMS_USER}"/>
 	   <property key="ems_password" value="${IOT_EMS_PASSWORD}"/>
-	   -->	   
+	     
 	   </broker-plugin>
+	    -->	
 	</broker-plugins>
    </core>
 </configuration>
