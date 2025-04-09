@@ -59,15 +59,13 @@ under the License.
 		</wildcard-addresses>
 		
       <acceptors>
-	     <acceptor name="artemis">tcp://0.0.0.0:${activemq.activemqPort}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
-         <acceptor name="amqp">tcp://0.0.0.0:${activemq.amqpPort}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>
+	     <!--<acceptor name="artemis">tcp://0.0.0.0:${activemq.activemqPort}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
+         <acceptor name="amqp">tcp://0.0.0.0:${activemq.amqpPort}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>-->
+		 <acceptor name="artemis">tcp://0.0.0.0:${activemq.acceptor.artemis.port}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
+         <acceptor name="amqp">tcp://0.0.0.0:${activemq.acceptor.amqp.port}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>
       </acceptors>
 
-	   <security-manager class-name="org.apache.activemq.artemis.spi.core.security.ActiveMQBasicSecurityManager">
-		  <property key="bootstrapUser" value="admin"/>
-		  <property key="bootstrapPassword" value="${activemq.admin.password}"/>
-		  <property key="bootstrapRole" value="admin"/>
-	   </security-manager>
+
    
       <security-settings>
          <security-setting match=">">
@@ -119,9 +117,9 @@ under the License.
           </address-setting>
       </address-settings>	
 
-	<broker-plugins>	
-	   <broker-plugin class-name=" eut.nebulouscloud.bridge.ControlPlaneBridgePlugin">
-	   </broker-plugin>
+		<broker-plugins>	
+	   <broker-plugin class-name="eut.nebulouscloud.bridge.ControlPlaneBridgePlugin"></broker-plugin>
+	  
 
 	<!--
 	   <broker-plugin class-name="eut.nebulouscloud.iot_dpp.monitoring.EMSQueuesMonitoringPlugin">
