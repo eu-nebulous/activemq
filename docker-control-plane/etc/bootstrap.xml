@@ -20,10 +20,10 @@
 
 	<security-manager class-name="org.apache.activemq.artemis.spi.core.security.ActiveMQBasicSecurityManager">
 		  <property key="bootstrapUser" value="admin"/>
-		  <property key="bootstrapPassword" value="${activemq.admin.password}"/>
+		  <property key="bootstrapPassword" value="${ACTIVEMQ_ADMIN_PASSWORD}"/>
 		  <property key="bootstrapRole" value="admin"/>
 	</security-manager>
-	
+
 
 
    <!-- artemis.URI.instance is parsed from artemis.instance by the CLI startup.

@@ -61,8 +61,8 @@ under the License.
       <acceptors>
 	     <!--<acceptor name="artemis">tcp://0.0.0.0:${activemq.activemqPort}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
          <acceptor name="amqp">tcp://0.0.0.0:${activemq.amqpPort}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>-->
-		 <acceptor name="artemis">tcp://0.0.0.0:${activemq.acceptor.artemis.port}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
-         <acceptor name="amqp">tcp://0.0.0.0:${activemq.acceptor.amqp.port}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>
+		 <acceptor name="artemis">tcp://0.0.0.0:${ACTIVEMQ_ACCEPTOR_ARTEMIS_PORT}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
+         <acceptor name="amqp">tcp://0.0.0.0:${ACTIVEMQ_ACCEPTOR_AMQP_PORT}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>
       </acceptors>
 
 
@@ -87,14 +87,17 @@ under the License.
       <address-settings>
          <!-- if you define auto-create on certain queues, management has to be auto-create -->
          <address-setting match="activemq.management>">
-            <dead-letter-address>DLQ</dead-letter-address>
-            <expiry-address>ExpiryQueue</expiry-address>
-            <redelivery-delay>0</redelivery-delay>
-            <max-size-bytes>-1</max-size-bytes>
-            <message-counter-history-day-limit>10</message-counter-history-day-limit>
-            <address-full-policy>PAGE</address-full-policy>
-            <auto-create-queues>true</auto-create-queues>
-            <auto-create-addresses>true</auto-create-addresses>
+			<dead-letter-address>DLQ</dead-letter-address>
+			<expiry-address>ExpiryQueue</expiry-address>
+			<redelivery-delay>0</redelivery-delay>
+			<!--...-->
+			<max-size-bytes>-1</max-size-bytes>
+			<message-counter-history-day-limit>10</message-counter-history-day-limit>
+			<address-full-policy>PAGE</address-full-policy>
+			<auto-create-queues>true</auto-create-queues>
+			<auto-create-addresses>true</auto-create-addresses>
+			<auto-create-jms-queues>true</auto-create-jms-queues>
+			<auto-create-jms-topics>true</auto-create-jms-topics>
          </address-setting>
 		 
          <address-setting match=">">
