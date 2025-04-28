@@ -1,3 +1,14 @@
-# Use the official Apache ActiveMQ image
-FROM docker.io/apache/activemq-classic:5.18.3
-COPY ./activemq.xml /opt/apache-activemq/conf/activemq.xml
+FROM apache/activemq-artemis:2.37.0-alpine
+RUN mkdir -p /var/lib/artemis-instance/etc-override
+COPY ./etc/broker.xml /var/lib/artemis-instance/etc-override
+COPY ./etc/bootstrap.xml /var/lib/artemis-instance/etc-override
+COPY ./etc/log4j2.properties /var/lib/artemis-instance/etc-override
+COPY ./lib /var/lib/artemis-instance/lib
+
+# Apparently, bootstrap.xml file doesn't support variable substitution, so we need to have a script that will replace the ADMIN password with the one provided as env variable.
+COPY ./entrypoint.sh /var/lib/artemis-instance/entrypoint.sh
+USER root
+RUN chmod +x /var/lib/artemis-instance/entrypoint.sh
+#RUN mkdir /var/lib/artemis-instance && chown -R artemis:artemis /var/lib/artemis-instance
+USER artemis
+ENTRYPOINT ["/var/lib/artemis-instance/entrypoint.sh"]
