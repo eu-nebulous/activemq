@@ -120,25 +120,12 @@ under the License.
           </address-setting>
       </address-settings>	
 
-		<broker-plugins>	
-	   <broker-plugin class-name="eut.nebulouscloud.bridge.ControlPlaneBridgePlugin"></broker-plugin>
-	  
-
-	<!--
-	   <broker-plugin class-name="eut.nebulouscloud.iot_dpp.monitoring.EMSQueuesMonitoringPlugin">
-	   <property key="monitored_queue_regex" value="^(rpiImage|rpiData|pozyxData|hazardous|notification)"/>	   
-	   <property key="reporting_topic_prefix" value="monitoring_"/>
-	   <property key="local_activemq_url" value="tcp://localhost:61616"/>
-	   <property key="query_interval_seconds" value="10"/>
-	   <property key="local_activemq_user" value="artemis"/>
-	   <property key="local_activemq_password" value="artemis"/>	   
-	   <property key="ems_host" value="${IOT_EMS_HOST}"/>
-	   <property key="ems_port" value="${IOT_EMS_PORT}"/>	   
-	   <property key="ems_user" value="${IOT_EMS_USER}"/>
-	   <property key="ems_password" value="${IOT_EMS_PASSWORD}"/>
-	     
-	   </broker-plugin>
-	    -->	
+		<broker-plugins>
+		  <broker-plugin class-name="eut.nebulouscloud.bridge.AppBridgePlugin">
+			<property key="APPLICATION_ID" value="${APPLICATION_ID}"/>
+			<property key="NEBULOUS_MESSAGE_BRIDGE_PASSWORD" value="${NEBULOUS_MESSAGE_BRIDGE_PASSWORD}"/>
+			<property key="NEBULOUS_CONTROL_PLANE_BROKER_ADDRESS" value="${NEBULOUS_CONTROL_PLANE_BROKER_ADDRESS}"/>
+		</broker-plugin>
 	</broker-plugins>
    </core>
 </configuration>
