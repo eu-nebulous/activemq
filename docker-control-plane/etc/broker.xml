@@ -61,8 +61,7 @@ under the License.
       <acceptors>
 	     <!--<acceptor name="artemis">tcp://0.0.0.0:${activemq.activemqPort}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
          <acceptor name="amqp">tcp://0.0.0.0:${activemq.amqpPort}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>-->
-		 <acceptor name="artemis">tcp://0.0.0.0:61616?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
-         <acceptor name="amqp">tcp://0.0.0.0:5672?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>
+		 <acceptor name="artemis">tcp://0.0.0.0:5672?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
       </acceptors>
 
 
