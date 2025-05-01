@@ -124,6 +124,7 @@ under the License.
 			<property key="APPLICATION_ID" value="${APPLICATION_ID}"/>
 			<property key="NEBULOUS_MESSAGE_BRIDGE_PASSWORD" value="${NEBULOUS_MESSAGE_BRIDGE_PASSWORD}"/>
 			<property key="NEBULOUS_CONTROL_PLANE_BROKER_ADDRESS" value="${NEBULOUS_CONTROL_PLANE_BROKER_ADDRESS}"/>
+			<property key="APP_BROKER_ADDRESS" value="${APP_BROKER_ADDRESS}"/>		  
 		</broker-plugin>
 	</broker-plugins>
    </core>

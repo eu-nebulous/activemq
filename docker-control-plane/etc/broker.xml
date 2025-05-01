@@ -119,7 +119,6 @@ under the License.
 
 		<broker-plugins>
 		  <broker-plugin class-name="eut.nebulouscloud.bridge.ControlPlaneBridgePlugin">
-			<property key="APP_BROKER_PORT" value="${APP_BROKER_PORT}"/>		  
 		  </broker-plugin>
 	</broker-plugins>
    </core>
