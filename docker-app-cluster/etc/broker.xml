@@ -74,9 +74,9 @@ under the License.
             <permission type="deleteDurableQueue" roles="admin"/>
             <permission type="createAddress" roles="admin"/>
             <permission type="deleteAddress" roles="admin"/>
-            <permission type="consume" roles="admin,bridge"/> <!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
+            <permission type="consume" roles="admin"/> 
             <permission type="browse" roles="admin"/>
-            <permission type="send" roles="admin"/>
+            <permission type="send" roles="admin,bridge"/><!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
             <!-- we need this otherwise ./artemis data imp wouldn't work -->
             <permission type="manage" roles="admin"/>
          </security-setting>
