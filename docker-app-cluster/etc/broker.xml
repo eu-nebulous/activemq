@@ -25,6 +25,7 @@ under the License.
 
    <core xmlns="urn:activemq:core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="urn:activemq:core ">
+	  <security-enabled>false</security-enabled>
       <name>0.0.0.0</name>
       <persistence-enabled>true</persistence-enabled>
       <max-redelivery-records>1</max-redelivery-records>
