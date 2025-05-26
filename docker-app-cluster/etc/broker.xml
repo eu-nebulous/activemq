@@ -60,8 +60,6 @@ under the License.
 		</wildcard-addresses>
 		
       <acceptors>
-	     <!--<acceptor name="artemis">tcp://0.0.0.0:${activemq.activemqPort}?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
-         <acceptor name="amqp">tcp://0.0.0.0:${activemq.amqpPort}?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;</acceptor>-->
 		 <acceptor name="artemis">tcp://0.0.0.0:61616?protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;</acceptor>
       </acceptors>
 
@@ -121,12 +119,16 @@ under the License.
       </address-settings>	
 
 		<broker-plugins>
+		<!-- AppBridgePlugin responsible for creating a bridge between NebulOuS control plane and app cluster (this one) message brokers. It gets most of its config from env variables-->
 		  <broker-plugin class-name="eut.nebulouscloud.bridge.AppBridgePlugin">
 			<property key="APPLICATION_ID" value="${APPLICATION_ID}"/>
 			<property key="NEBULOUS_MESSAGE_BRIDGE_PASSWORD" value="${NEBULOUS_MESSAGE_BRIDGE_PASSWORD}"/>
 			<property key="NEBULOUS_CONTROL_PLANE_BROKER_ADDRESS" value="${NEBULOUS_CONTROL_PLANE_BROKER_ADDRESS}"/>
 			<property key="APP_BROKER_ADDRESS" value="${APP_BROKER_ADDRESS}"/>		  
 		</broker-plugin>
+		
+		<!-- You may add any needed plugin here -->
+		
 	</broker-plugins>
    </core>
 </configuration>
