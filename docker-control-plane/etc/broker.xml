@@ -65,18 +65,46 @@ under the License.
 
    
       <security-settings>
-         <security-setting match=">">
-            <permission type="createNonDurableQueue" roles="admin"/>
-            <permission type="deleteNonDurableQueue" roles="admin"/>
-            <permission type="createDurableQueue" roles="admin"/>
-            <permission type="deleteDurableQueue" roles="admin"/>
-            <permission type="createAddress" roles="admin"/>
-            <permission type="deleteAddress" roles="admin"/>
-            <permission type="consume" roles="admin"/> 
-            <permission type="browse" roles="admin"/>
-            <permission type="send" roles="admin,bridge"/><!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
+         <security-setting match="topic://eu.nebulouscloud.monitoring.>">
+            <permission type="createNonDurableQueue" roles="admins, apps"/>
+            <permission type="deleteNonDurableQueue" roles="admins, apps"/>
+            <permission type="createDurableQueue" roles="admins, apps"/>
+            <permission type="deleteDurableQueue" roles="admins, apps"/>
+            <permission type="createAddress" roles="admins, apps"/>
+            <permission type="deleteAddress" roles="admins, apps"/>
+            <permission type="consume" roles="admins, apps"/> 
+            <permission type="browse" roles="admins, apps"/>
+            <permission type="send" roles="admins,bridge, apps"/><!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
             <!-- we need this otherwise ./artemis data imp wouldn't work -->
-            <permission type="manage" roles="admin"/>
+            <permission type="manage" roles="admins, apps"/>
+         </security-setting>		 
+
+         <security-setting match="topic://eu.nebulouscloud.optimiser.>">
+            <permission type="createNonDurableQueue" roles="admins, apps"/>
+            <permission type="deleteNonDurableQueue" roles="admins, apps"/>
+            <permission type="createDurableQueue" roles="admins, apps"/>
+            <permission type="deleteDurableQueue" roles="admins, apps"/>
+            <permission type="createAddress" roles="admins, apps"/>
+            <permission type="deleteAddress" roles="admins, apps"/>
+            <permission type="consume" roles="admins, apps"/> 
+            <permission type="browse" roles="admins, apps"/>
+            <permission type="send" roles="admins,bridge, apps"/><!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
+            <!-- we need this otherwise ./artemis data imp wouldn't work -->
+            <permission type="manage" roles="admins, apps"/>
+         </security-setting>	
+		 
+         <security-setting match=">">
+            <permission type="createNonDurableQueue" roles="admins"/>
+            <permission type="deleteNonDurableQueue" roles="admins"/>
+            <permission type="createDurableQueue" roles="admins"/>
+            <permission type="deleteDurableQueue" roles="admins"/>
+            <permission type="createAddress" roles="admins"/>
+            <permission type="deleteAddress" roles="admins"/>
+            <permission type="consume" roles="admins"/> 
+            <permission type="browse" roles="admins"/>
+            <permission type="send" roles="admins,bridge"/><!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
+            <!-- we need this otherwise ./artemis data imp wouldn't work -->
+            <permission type="manage" roles="admins"/>
          </security-setting>
       </security-settings>
 
