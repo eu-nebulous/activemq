@@ -77,8 +77,22 @@ under the License.
             <permission type="send" roles="admins,bridge, apps"/><!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
             <!-- we need this otherwise ./artemis data imp wouldn't work -->
             <permission type="manage" roles="admins, apps"/>
-         </security-setting>		 
-
+         </security-setting>
+		 
+         <security-setting match="topic://eu.nebulouscloud.*.health">
+            <permission type="createNonDurableQueue" roles="admins, apps"/>
+            <permission type="deleteNonDurableQueue" roles="admins, apps"/>
+            <permission type="createDurableQueue" roles="admins, apps"/>
+            <permission type="deleteDurableQueue" roles="admins, apps"/>
+            <permission type="createAddress" roles="admins, apps"/>
+            <permission type="deleteAddress" roles="admins, apps"/>
+            <permission type="consume" roles="admins, apps"/> 
+            <permission type="browse" roles="admins, apps"/>
+            <permission type="send" roles="admins,bridge, apps"/><!-- bridge role is allowed to send to any topic. Filtering happens on the pluggin-->
+            <!-- we need this otherwise ./artemis data imp wouldn't work -->
+            <permission type="manage" roles="admins, apps"/>
+         </security-setting>
+		 
          <security-setting match="topic://eu.nebulouscloud.optimiser.>">
             <permission type="createNonDurableQueue" roles="admins, apps"/>
             <permission type="deleteNonDurableQueue" roles="admins, apps"/>
