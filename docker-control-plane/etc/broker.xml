@@ -201,18 +201,18 @@ under the License.
 		<broker-plugins>
 		  <broker-plugin class-name="eut.nebulouscloud.bridge.ControlPlaneBridgePlugin">
 		  </broker-plugin>
-		  
+		  <!--
 		  		 <broker-plugin class-name="eut.nebulouscloud.cluster_info.ClusterInfoPlugin">
 			<property key="BROKER_USERNAME" value="admin"/>
 			<property key="BROKER_PORT" value="61616"/>
 			<property key="BROKER_PASSWORD" value="${ACTIVEMQ_ADMIN_PASSWORD}"/>
-			<property key="INFLUXDB_URL" value="${APP_BROKER_ADDRESS}"/>	
+			<property key="INFLUXDB_URL" value="${INFLUX_URL}"/>	
 			<property key="INFLUXDB_ORG" value="${INFLUXDB_ORG}"/>	
 			<property key="INFLUXDB_TOKEN" value="${INFLUXDB_TOKEN}"/>	
 			<property key="INFLUXDB_BUCKET" value="${INFLUXDB_BUCKET}"/>				
 
 		</broker-plugin>
-		
+		-->
 		  
 		  
 	</broker-plugins>
