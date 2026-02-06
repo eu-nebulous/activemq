@@ -136,7 +136,6 @@ under the License.
 			<property key="INFLUXDB_TOKEN" value="${INFLUXDB_TOKEN}"/>	
 			<property key="IS_NEBULOUS_CONTROL_PLANE" value="false"/>
 		</broker-plugin>
-		<!-- You may add any needed plugin here -->
 		
 	</broker-plugins>
    </core>
