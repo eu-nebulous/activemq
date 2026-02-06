@@ -127,6 +127,15 @@ under the License.
 			<property key="APP_BROKER_ADDRESS" value="${APP_BROKER_ADDRESS}"/>		  
 		</broker-plugin>
 		
+		<broker-plugin class-name="eut.nebulouscloud.cluster_info.ClusterInfoPlugin">
+			<property key="BROKER_USERNAME" value="admin"/>
+			<property key="BROKER_PORT" value="61616"/>
+			<property key="BROKER_PASSWORD" value="${ACTIVEMQ_ADMIN_PASSWORD}"/>
+			<property key="INFLUXDB_URL" value="${INFLUXDB_URL}"/>	
+			<property key="INFLUXDB_ORG" value="${INFLUXDB_ORG}"/>	
+			<property key="INFLUXDB_TOKEN" value="${INFLUXDB_TOKEN}"/>	
+			<property key="IS_NEBULOUS_CONTROL_PLANE" value="false"/>
+		</broker-plugin>
 		<!-- You may add any needed plugin here -->
 		
 	</broker-plugins>
